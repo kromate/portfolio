@@ -498,7 +498,7 @@ a:hover {
 .fa-icon-effect-8 .fa-icon:after {
         top: 0;
         left: 0;
-        padding: 0;
+        padding: 100;
         z-index: -1;
         box-shadow: 0 0 0 2px rgba(255,255,255,1);
         opacity: 0;

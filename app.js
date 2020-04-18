@@ -1,6 +1,3 @@
-(function($){
-    new WOW().init();
-})(jQuery);
 
 class TypeWriter {
   constructor(txtElement, words, wait = 3000) {
