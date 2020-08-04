@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kromate portfolio
+  </title>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #394876;
+      transition: 2s ease-in-out;
+      padding: 10px;
+      overflow: hidden;
+          /* width: 100%;  */
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 80vw;
+    }
+
+    .logo {
+      max-height: 100%;
+      max-width: 10rem;
+      box-shadow: -3px 3px 4px 5px #66739a, 3px -3px 4px 5px #66739a, 3px 3px 4px 5px #66739a, -3px -3px 4px 5px #66739a;
+      border-radius: 50%;
+      transition: 0.5s linear;
+    }
+
+    .logo:hover {
+      transform: rotate(360deg);
+    }
+
+    .card {
+      box-shadow: 3px 3px 4px #1f2a4e, -3px -3px 4px #66739a;
+      padding: 2px 10px;
+      margin-top: 3rem;
+      border-radius: 0.3rem;
+      color: #290721;
+      font-family: monospace;
+      font-size: 1.2rem;
+      text-align: center;
+      animation: fade 1s forwards;
+    }
+
+    .spin {
+      border-radius: 50%;
+      animation: spin 2s linear  infinite forwards;
+      margin-top:2rem;
+    }
+
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <main>
+    <img class='logo' src='./img/k1.png'>
+    <div id="content">
+      <img class='spin' src='./img/hypno2.jpg'>
+    </div>
+    </div>
+  </main>
+
+
+
+<script>
+    const home = new Audio()
+      home.src = './hyp.m4a'
+      setTimeout(play, 3000)
+      function play() {
+        home.play()
+      }
+</script>
+
+</body>
+
+</html>

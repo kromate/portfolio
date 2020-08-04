@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -91,10 +91,11 @@
       color: #290721;
     }
 
-.res{
-  width: 192px;
-  height: 192px;
-}
+    .res {
+      width: 192px;
+      height: 192px;
+    }
+
   </style>
 </head>
 
@@ -103,26 +104,31 @@
     <img class='logo' src='./img/k1.png'>
     <div id="content">
       <div class='card'>
-  <p>Hi am Anthony a
-    FullStack
-    JavaScript developer
-    <br>
-    And depending on who
-    you
-    are i have different
-    contents to display
-  </p>
-  </div>
+        <p>Hi am Anthony a
+          FullStack
+          JavaScript developer
+          <br>
+          And depending on who
+          you
+          are i have different
+          contents to display
+        </p>
+      </div>
     </div>
 
     <div class="links">
       <div id="friends" class='card link'>
         <p>Friends </p>
       </div>
-
       <div id="employer" class='card link'>
         <p>Employer</p>
       </div>
+      <a href="./pic.html" target="_blank" rel="noopener noreferrer">
+        <div id="employer" class='card link'>
+          <p>Hypnotic Button</p>
+        </div>
+      </a>
+
     </div>
 
 
@@ -138,6 +144,12 @@
   const friends = document.querySelector('#friends')
   const employer = document.querySelector('#employer')
   const content = document.querySelector('#content')
+  const home = new Audio()
+  home.src = './home.m4a'
+  setTimeout(play, 3000)
+  function play() {
+    home.play()
+  }
 
   friends.addEventListener('click', () => {
     content.innerHTML = `
@@ -151,6 +163,7 @@
 
   employer.addEventListener('click', () => {
     content.innerHTML = `
+    <h1>Dear Employer</h1>
       <div class='card'>
         <p>
           So, you probably here looking to hire a fullstack (frontend/backend) developer to your
@@ -159,7 +172,7 @@
         </p>
 
         <p>
-          Time for the technical aspect, am a javascript developer with three years of experiences
+          Time for the technical aspect, am a javascript developer with three years of experience
           building scalable, efficient softwares. My Stack includes <span class="stack">Reacts, Vue,
             Node, Express, Electron, Mongodb, Postgres, firebase, Aws and i also occasionally write flutter</span> <br> And Yes I also
           have experience in technical writing(<i>Check out my blog on <a
@@ -174,21 +187,31 @@
 
 
       </div>
-
-          <div class="links">
-            <div id="friends" class='card link'>
+<div class="links">
+      <a href="./vanilla.html" target="_blank" rel="noopener noreferrer">
+        
+            <div class='card link'>
               <img class="res" src="./img/javascript.png" alt="">
             </div>
-          
-            <div id="employer" class='card link'>
+      </a>
+         
+            <a href="https://kromreact.netlify.app/" target="_blank" rel="noopener noreferrer">
+       <div  class='card link'>
               <img src="./img/react.png" alt="">
             </div>
-            <div id="employer" class='card link'>
+      </a>
+
+  <a href="https://kromvue.netlify.app/" target="_blank" rel="noopener noreferrer">
+           <div class='card link'>
               <img src="./img/vue.png" alt="">
             </div>
+      </a>
+          
+           
           </div>
     `
   })
+
 
 
 </script>
