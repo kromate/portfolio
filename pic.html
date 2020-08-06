@@ -85,6 +85,7 @@
 <body>
   <main>
     <img class='logo' src='./img/k1.png'>
+     <div class='card' id='voice'>Play</div>
     <div id="content">
       <img class='spin' src='./img/hypno2.jpg'>
     </div>
@@ -94,12 +95,22 @@
 
 
 <script>
-    const home = new Audio()
+     const home = new Audio()
       home.src = './hyp.m4a'
-      setTimeout(play, 3000)
-      function play() {
-        home.play()
-      }
+  let isPlaying = false
+  document.querySelector('#voice').addEventListener('click', function(){
+    if(isPlaying == true){
+      home.pause()
+      document.querySelector('#voice').innerHTML = 'play'
+      isPlaying = false
+    }else{
+      isPlaying = true
+      home.play()
+      document.querySelector('#voice').innerHTML = 'pause'
+    }
+  })
+ 
+
 </script>
 
 </body>

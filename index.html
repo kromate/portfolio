@@ -102,6 +102,7 @@
 <body>
   <main>
     <img class='logo' src='./img/k1.png'>
+    <div class='card' id="voice">Play</div>
     <div id="content">
       <div class='card'>
         <p>Hi am Anthony a
@@ -144,12 +145,21 @@
   const friends = document.querySelector('#friends')
   const employer = document.querySelector('#employer')
   const content = document.querySelector('#content')
-  const home = new Audio()
-  home.src = './home.m4a'
-  setTimeout(play, 3000)
-  function play() {
-    home.play()
-  }
+
+       const home = new Audio()
+        home.src = './home.m4a'
+        let isPlaying = false
+        document.querySelector('#voice').addEventListener('click', function () {
+          if (isPlaying == true) {
+            home.pause()
+            document.querySelector('#voice').innerHTML = 'play'
+            isPlaying = false
+          } else {
+            isPlaying = true
+            home.play()
+            document.querySelector('#voice').innerHTML = 'pause'
+          }
+        })
 
   friends.addEventListener('click', () => {
     content.innerHTML = `
