@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="./icon.ico" type="image/x-icon">
   <title>Kromate Portfolio</title>
 </head>
 
@@ -12,12 +14,12 @@
 </body>
 
 
-  <script>
-window.addEventListener('DOMContentLoaded', start)
-    
-      function start() {
-        const view = document.querySelector('body');
-        view.innerHTML = `
+<script>
+  window.addEventListener('DOMContentLoaded', start)
+
+  function start() {
+    const view = document.querySelector('body');
+    view.innerHTML = `
      <style>
     body {
       font-family: 'Galada', cursive;
@@ -38,11 +40,16 @@ window.addEventListener('DOMContentLoaded', start)
       background-color: rgb(5, 5, 5);
       padding: 1rem;
       display: flex;
+      text-align:center;
+      flex-direction:column;
       justify-content: center;
       align-items: center;
       border-radius: 35px;
       box-shadow: 2px 3px 19px 2px;
       transition: 5s;
+      -webkit-text-stroke-color: darkorange;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-fill-color: rgb(8, 8, 8);
     }
 
     main p {
@@ -51,11 +58,11 @@ window.addEventListener('DOMContentLoaded', start)
       font-size: 20rem;
       padding: 2rem;
       /* margin: 0; */
-      margin-left: auto;
-      margin-right: auto;
+      margin: 1rem auto;
       text-shadow: 1px -1px 9px;
       color: darkorange;
       transition: 5s;
+      display:block;
     }
 
     .di {
@@ -102,127 +109,128 @@ window.addEventListener('DOMContentLoaded', start)
   <div class="wrapper">
     <main>
       <p id="draw" class="di">Welcome</p>
+      <div>This site contains a lot of experimental features, expect some weirdness</div>
     </main>
   </div>
     `
 
-    setTimeout(finishLoading, 1000) 
+    setTimeout(finishLoading, 3000)
+  }
+
+
+
+
+
+
+
+</script>
+
+<script>
+  const view = document.querySelector('body')
+  class Router {
+    constructor(name, routes) {
+      return {
+        name,
+        routes
       }
-   
-   
-   
-  
-     
-
-
-  </script>
-
-  <script>
-    const view = document.querySelector('body')
-      class Router {
-        constructor(name, routes) {
-          return {
-            name,
-            routes
-          }
-        }
-
-      }
-              const myRouter = new Router('myRouter', [
-                  {
-                    path: '/portfolio/vanilla.html',
-                    name: 'Root'
-                  },
-                  {
-                    path: '/about',
-                    name: 'About'
-                  },
-                  {
-                    path: '/contact',
-                    name: 'Contact'
-                  },
-                  {
-                    path: '/experience',
-                    name: 'Experience'
-                  },
-                  {
-                    path: '/project',
-                    name: 'Project'
-                  },
-                ]);
-    function option(){
-
-      const activeRoutes = Array.from(document.querySelectorAll('[route]'))
-      console.log(activeRoutes)
-
-      const navigate = function (event) {
-        console.log(event)
-        var route = event.target.attributes[0].value;
-        var routeInfo = myRouter.routes.filter(function (r) {
-          return r.path === route;
-        })[0];
-        console.log(event)
-        console.log(routeInfo)
-        if (!routeInfo) {
-          view.innerHTML = '404!'
-        } else {
-          window.history.pushState(routeInfo.name, '', routeInfo.path);
-         finishLoading()
-        }
-      }
-      activeRoutes.forEach(function (route) {
-        route.addEventListener('click', navigate, false);
-      })
     }
-  </script>
 
-  <script>
-        function finishLoading() {
-          const view = document.querySelector('body')
-          console.log('DOM loaded');
+  }
+  const myRouter = new Router('myRouter', [
+    {
+      path: '/portfolio/vanilla.html',
+      name: 'Root'
+    },
+    {
+      path: '/about',
+      name: 'About'
+    },
+    {
+      path: '/contact',
+      name: 'Contact'
+    },
+    {
+      path: '/experience',
+      name: 'Experience'
+    },
+    {
+      path: '/project',
+      name: 'Project'
+    },
+  ]);
+  function option() {
+
+    const activeRoutes = Array.from(document.querySelectorAll('[route]'))
+    console.log(activeRoutes)
+
+    const navigate = function (event) {
+      console.log(event)
+      var route = event.target.attributes[0].value;
+      var routeInfo = myRouter.routes.filter(function (r) {
+        return r.path === route;
+      })[0];
+      console.log(event)
+      console.log(routeInfo)
+      if (!routeInfo) {
+        view.innerHTML = '404!'
+      } else {
+        window.history.pushState(routeInfo.name, '', routeInfo.path);
+        finishLoading()
+      }
+    }
+    activeRoutes.forEach(function (route) {
+      route.addEventListener('click', navigate, false);
+    })
+  }
+</script>
+
+<script>
+  function finishLoading() {
+    const view = document.querySelector('body')
+    console.log('DOM loaded');
 
 
-          class Router {
-            constructor(name, routes) {
-              return {
-                name,
-                routes
-              }
-            }
+    class Router {
+      constructor(name, routes) {
+        return {
+          name,
+          routes
+        }
+      }
 
-          }
+    }
 
-          const myRouter = new Router('myRouter', [
-            {
-              path: '/portfolio/vanilla.html',
-              name: 'Root'
-            },
-            {
-              path: '/about',
-              name: 'About'
-            },
-            {
-              path: '/contact',
-              name: 'Contact'
-            },
-            {
-              path: '/experience',
-              name: 'Experience'
-            },
-            {
-              path: '/project',
-              name: 'Project'
-            },
-          ]);
+    const myRouter = new Router('myRouter', [
+      {
+        path: '/portfolio/vanilla.html',
+        name: 'Root'
+      },
+      {
+        path: '/about',
+        name: 'About'
+      },
+      {
+        path: '/contact',
+        name: 'Contact'
+      },
+      {
+        path: '/experience',
+        name: 'Experience'
+      },
+      {
+        path: '/project',
+        name: 'Project'
+      },
+    ]);
 
-          let currentPath = window.location.pathname;
-        
-            var route = myRouter.routes.filter(function (r) {
-              return r.path == currentPath
-            })[0]
-            
-            if (route.path == '/portfolio/vanilla.html') {
-              view.innerHTML = ` 
+    let currentPath = window.location.pathname;
+
+    var route = myRouter.routes.filter(function (r) {
+      return r.path == currentPath
+    })[0]
+
+    if (route.path == '/portfolio/vanilla.html') {
+      view.innerHTML = ` 
 <style>
   body {
     font-family: 'Galada', cursive;
@@ -391,49 +399,49 @@ window.addEventListener('DOMContentLoaded', start)
 </main>
 `
 
-              console.log(route)
-              option()
-            } else if(route.path == '/about'){
+      console.log(route)
+      option()
+    } else if (route.path == '/about') {
 
-                  class TypeWriter {
-                constructor(txtElement, words) {
-                  this.txtElement = txtElement;
-                  this.words = words;
-                  this.txt = '';
-                  //index of the the current string being typedout
-                  this.wordIndex = 0;
-                  //method type()
-                  this.type();
+      class TypeWriter {
+        constructor(txtElement, words) {
+          this.txtElement = txtElement;
+          this.words = words;
+          this.txt = '';
+          //index of the the current string being typedout
+          this.wordIndex = 0;
+          //method type()
+          this.type();
 
-                }
+        }
 
 
-                type() {
-                  //the number 10 is how fast the characters are typed on screen
-                  const typing = setTimeout(() => this.type(), 10)
-                  //current index of words
-                  const current = this.wordIndex % this.words.length;
-                  //get full text of current word
-                  const fullTxt = this.words[current];
-                  this.txt = fullTxt.substring(0, this.txt.length + 1);
-                  // insert txt into element
-                  this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
-                  //select pencil icon for writting animation
-                  const typingElement = document.querySelector('.material-icons');
-                  document.querySelector('.material-icons').className = "material-icons";
-                  // if word is complete, stop typing and fade pencil
-                  if (this.txt === fullTxt) {
-                    typingElement.className += ' fade'
-                    clearInterval(typing)
-                  }
-                }
-              }
-                  function init() {
-                const txtElement = document.querySelector('.txt-type');
-                const words = JSON.parse(txtElement.getAttribute('data-words'));
-                new TypeWriter(txtElement, words);
-              }
-              view.innerHTML = ` 
+        type() {
+          //the number 10 is how fast the characters are typed on screen
+          const typing = setTimeout(() => this.type(), 10)
+          //current index of words
+          const current = this.wordIndex % this.words.length;
+          //get full text of current word
+          const fullTxt = this.words[current];
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+          // insert txt into element
+          this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+          //select pencil icon for writting animation
+          const typingElement = document.querySelector('.material-icons');
+          document.querySelector('.material-icons').className = "material-icons";
+          // if word is complete, stop typing and fade pencil
+          if (this.txt === fullTxt) {
+            typingElement.className += ' fade'
+            clearInterval(typing)
+          }
+        }
+      }
+      function init() {
+        const txtElement = document.querySelector('.txt-type');
+        const words = JSON.parse(txtElement.getAttribute('data-words'));
+        new TypeWriter(txtElement, words);
+      }
+      view.innerHTML = ` 
         <style>
   @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
 
@@ -560,15 +568,15 @@ window.addEventListener('DOMContentLoaded', start)
     </div>
   </div>
   <div class="btn">    
-    <div><button route='/'>Menu</button></div>
+    <div><button route='/portfolio/vanilla.html'>Menu</button></div>
     <div><button route='/experience'>Experience</button></div>
   </div>
         `
-              init()
-              option()
-            }
-            else if(route.path == '/experience'){
-              view.innerHTML = ` 
+      init()
+      option()
+    }
+    else if (route.path == '/experience') {
+      view.innerHTML = ` 
     <style>
     body {
       font-family: 'Galada', cursive;
@@ -687,7 +695,7 @@ window.addEventListener('DOMContentLoaded', start)
 
     <div class="btn">
       <div><button route='/about'>About Me</button></div>
-      <div><button route='/'>Menu</button></div>      
+      <div><button route='/portfolio/vanilla.html'>Menu</button></div>      
       <div><button route='/project'>Projects</button></div>
     </div>
   <main>
@@ -726,34 +734,34 @@ window.addEventListener('DOMContentLoaded', start)
 
 
   `
-  option()
-            }
-            else if(route.path == '/contact'){
-                function form() {
-                const form = document.forms['submit-to-google-sheet']
+      option()
+    }
+    else if (route.path == '/contact') {
+      function form() {
+        const form = document.forms['submit-to-google-sheet']
 
-                form.addEventListener('submit', handleSubmit)
-                function handleSubmit(e) {
-                  e.preventDefault()
-                  const form = document.forms['submit-to-google-sheet'];
-                  const scriptURL = 'https://script.google.com/macros/s/AKfycbxHtzgmNP5GGoomN1JUwX6UCWwqnEhiUGGwz4BnjYyNYV6PaT8/exec';
+        form.addEventListener('submit', handleSubmit)
+        function handleSubmit(e) {
+          e.preventDefault()
+          const form = document.forms['submit-to-google-sheet'];
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbxHtzgmNP5GGoomN1JUwX6UCWwqnEhiUGGwz4BnjYyNYV6PaT8/exec';
 
-                  document.querySelector('#btn').disabled = true;
+          document.querySelector('#btn').disabled = true;
 
-                  document.querySelector('#btn').innerHTML = 'Sending';
-                  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                    .then((response) => {
-                      document.querySelector('#btn').innerHTML = 'Sent';
-                    })
-                    .catch((error) => {
-                      alert('Error!', error.message);
-                      document.querySelector('#btn').disabled = false;
-                      document.querySelector('#btn').innerHTML = 'Submit';
-                    });
-                }
+          document.querySelector('#btn').innerHTML = 'Sending';
+          fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then((response) => {
+              document.querySelector('#btn').innerHTML = 'Sent';
+            })
+            .catch((error) => {
+              alert('Error!', error.message);
+              document.querySelector('#btn').disabled = false;
+              document.querySelector('#btn').innerHTML = 'Submit';
+            });
+        }
 
-              }
-              view.innerHTML = `
+      }
+      view.innerHTML = `
                 <style>
     body {
       font-family: 'Galada', cursive;
@@ -971,7 +979,7 @@ textarea:focus {
   
   <div class="btn">
     <div><button route='/project'>Projects</button></div>
-    <div><button route='/'>Menu</button></div>
+    <div><button route='/portfolio/vanilla.html'>Menu</button></div>
   </div>
   <main>
     <div class="social">
@@ -1021,11 +1029,11 @@ textarea:focus {
   </main>
   `
 
-  form()
-  option()
-            }
-            else if(route.path == '/project'){
-              view.innerHTML = `
+      form()
+      option()
+    }
+    else if (route.path == '/project') {
+      view.innerHTML = `
                 <style>
     body {
       font-family: 'Galada', cursive;
@@ -1149,7 +1157,7 @@ textarea:focus {
   
   <div class="btn">
     <div><button route='/experience'>Experience</button></div>
-    <div><button route='/'>Menu</button></div>
+    <div><button route='/portfolio/vanilla.html'>Menu</button></div>
     <div><button route='/contact'>Contact</button></div>
   </div>
   <main>
@@ -1218,10 +1226,10 @@ textarea:focus {
   </main>
 `
 
-              option()
-            }
-          }
-  </script>
+      option()
+    }
+  }
+</script>
 
 
 </html>
