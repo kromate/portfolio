@@ -82,7 +82,7 @@ main {
   box-shadow: 3px 3px 4px #5598c7, -3px -3px 4px #0e0d10;
 }
 .p {
-  box-shadow: 3px 3px 4px #5598c7, -3px -3px 4px #55c773;
+  box-shadow: 3px 3px 4px#55c773, -3px -3px 4px #0e0d10;
 }
 .card {
   box-shadow: 3px 3px 4px #2f2b2e, -3px -3px 4px #252529;
