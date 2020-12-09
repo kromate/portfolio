@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kromate portfolio
+  </title>
+  <link rel="shortcut icon" href="./icon.ico" type="image/x-icon">
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #394876;
+      transition: 2s ease-in-out;
+      padding: 10px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 80vw;
+    }
+
+    .logo {
+      max-height: 100%;
+      max-width: 10rem;
+      box-shadow: -3px 3px 4px 5px #66739a, 3px -3px 4px 5px #66739a, 3px 3px 4px 5px #66739a, -3px -3px 4px 5px #66739a;
+      border-radius: 50%;
+      transition: 0.5s linear;
+    }
+
+    .logo:hover {
+      transform: rotate(360deg);
+    }
+
+    .card {
+      box-shadow: 3px 3px 4px #1f2a4e, -3px -3px 4px #66739a;
+      padding: 2px 10px;
+      margin-top: 3rem;
+      border-radius: 0.3rem;
+      color: #290721;
+      font-family: monospace;
+      font-size: 1.2rem;
+      text-align: center;
+      animation: fade 1s forwards;
+    }
+
+    h1 {
+      text-align: center;
+      color: #290721;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .link {
+      width: fit-content;
+      margin: 2rem 5px;
+      transition: 0.5s linear;
+    }
+
+    .link:hover {
+      background-color: cornflowerblue;
+      cursor: pointer;
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .stack {
+      color: #96050c;
+    }
+
+    a {
+      color: #290721;
+    }
+
+    .res {
+      width: 192px;
+      height: 192px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <main>
+    <img class='logo' src='./img/k1.png'>
+    <div class='card' id="voice">Play</div>
+    <div id="content">
+      <div class='card'>
+        <p>Hi am Anthony a
+          FullStack
+          JavaScript developer
+          <br>
+          And depending on who
+          you
+          are i have different
+          contents to display
+        </p>
+      </div>
+    </div>
+
+    <div class="links">
+      <div id="friends" class='card link'>
+        <p>Friends </p>
+      </div>
+      <div id="employer" class='card link'>
+        <p>Employer</p>
+      </div>
+      <a href="./pic.html" target="_blank" rel="noopener noreferrer">
+        <div id="employer" class='card link'>
+          <p>Hypnotic Button</p>
+        </div>
+      </a>
+
+    </div>
+
+
+  </main>
+
+
+
+
+
+</body>
+
+<script>
+  const friends = document.querySelector('#friends')
+  const employer = document.querySelector('#employer')
+  const content = document.querySelector('#content')
+
+       const home = new Audio()
+        home.src = './home.m4a'
+        let isPlaying = false
+        document.querySelector('#voice').addEventListener('click', function () {
+          if (isPlaying == true) {
+            home.pause()
+            document.querySelector('#voice').innerHTML = 'play'
+            isPlaying = false
+          } else {
+            isPlaying = true
+            home.play()
+            document.querySelector('#voice').innerHTML = 'pause'
+          }
+        })
+
+  friends.addEventListener('click', () => {
+    content.innerHTML = `
+          <h1>Dear Friends</h1>
+    <div class='card'>
+  <p>Hello, it's been a while but unless you have a paid project to give me please kindly exit the site and enter my DM🙂</p>
+  <p>On the other hand, if you considering a friend for a paid project, then what are friends for right😂, you should probably click the button meant for  my employers  to get more details and a contact page. ✌</p>
+</div>
+    `
+  })
+
+  employer.addEventListener('click', () => {
+    content.innerHTML = `
+    <h1>Dear Employer</h1>
+      <div class='card'>
+        <p>
+          So, you probably here looking to hire a fullstack (frontend/backend) developer to your
+          software development team and you been scanning through alot of application and you
+          probably tired or not, either way your search is over(<i>Hopefully 👀</i>).
+        </p>
+
+        <p>
+          Time for the technical aspect, am a javascript developer with three years of experience
+          building scalable, efficient softwares. My Stack includes <span class="stack">Reacts, Vue,
+            Node, Express, Electron, Mongodb, Postgres, firebase, Aws and i also occasionally write flutter</span> <br> And Yes I also
+          have experience in technical writing(<i>Check out my blog on <a
+              href="http://kromate.hanshnode.dev">Hashnode</a> </i>), StartUps, and building
+          javascript Plugins </p>
+        <p>
+          If all this still doesn't impress you 😪, then check out my projects below. <br> over the
+          years have built multiple sites ranging from plain sweet vanilla JavaScript to React and
+          Vue. <br> And have gone through the stress of creating personalized portfolio based on the
+          stack you hiring for(<i>the vanilla js page also contains my node js projects</i>)
+         </p>
+
+
+      </div>
+<div class="links">
+      <a href="./vanilla.html" target="_blank" rel="noopener noreferrer">
+        
+            <div class='card link'>
+              <img class="res" src="./img/javascript.png" alt="">
+            </div>
+      </a>
+         
+            <a href="https://kromreact.netlify.app/" target="_blank" rel="noopener noreferrer">
+       <div  class='card link'>
+              <img src="./img/react.png" alt="">
+            </div>
+      </a>
+
+  <a href="https://kromvue.netlify.app/" target="_blank" rel="noopener noreferrer">
+           <div class='card link'>
+              <img src="./img/vue.png" alt="">
+            </div>
+      </a>
+          
+           
+          </div>
+    `
+  })
+
+
+
+</script>
+
+
+</html>

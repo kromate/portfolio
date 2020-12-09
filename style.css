@@ -1,0 +1,116 @@
+* {
+  font-family: monospace;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #3b3644;
+  transition: 2s ease-in-out;
+  padding: 10px;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+}
+
+.size {
+  max-width: 750px;
+}
+.mt-3 {
+  margin-top: 1rem !important;
+}
+.logo {
+  max-height: 100%;
+  max-width: 10rem;
+  box-shadow: -3px 3px 4px 5px #322833, 3px -3px 4px 5px #322833, 3px 3px 4px 5px #322833,
+    -3px -3px 4px 5px #322833;
+  border-radius: 50%;
+  transition: 0.5s linear;
+}
+.logo:hover {
+  transform: rotate(360deg);
+}
+.badges {
+  border-radius: 0;
+  font-size: 12px;
+  line-height: 1;
+  margin: 8px 10px;
+  padding: 0.375rem 0.5625rem;
+  font-weight: normal;
+  box-shadow: 3px 3px 3px #121113, -3px -3px 6px #121113;
+  color: #e6daef;
+  background-color: #2f293ae8;
+  text-align: center;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 3vh;
+  text-align: center;
+  margin: 0;
+  color: rgb(199, 190, 199);
+  font-weight: 700;
+  padding: 4px 8px;
+  margin: 20px 0px 5px 0px;
+  border-radius: 3px;
+
+  letter-spacing: 5px;
+}
+.t {
+  box-shadow: 3px 3px 4px #ed8166, -3px -3px 4px #0e0d10;
+}
+.k {
+  box-shadow: 3px 3px 4px #5b4c9a, -3px -3px 4px #0e0d10;
+}
+.s {
+  box-shadow: 3px 3px 4px #c7559c, -3px -3px 4px #0e0d10;
+}
+.e {
+  box-shadow: 3px 3px 4px #5598c7, -3px -3px 4px #0e0d10;
+}
+.p {
+  box-shadow: 3px 3px 4px #5598c7, -3px -3px 4px #55c773;
+}
+.card {
+  box-shadow: 3px 3px 4px #2f2b2e, -3px -3px 4px #252529;
+  padding: 2px 10px;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  color: #fff;
+  font-weight: 550;
+  font-family: monospace;
+  font-size: 1.3rem;
+  letter-spacing: 0.4px;
+  text-align: center;
+  animation: fade 1s forwards;
+}
+.p-2 {
+  padding: 1rem;
+  box-shadow: 3px 3px 3px #70627d, -3px -3px 6px #70627d;
+}
+a {
+  color: tomato;
+  text-decoration: none;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
