@@ -84,6 +84,12 @@ main {
 .p {
   box-shadow: 3px 3px 4px#55c773, -3px -3px 4px #0e0d10;
 }
+.b {
+  box-shadow: 3px 3px 1px #673ab7, -3px -3px 1px #673ab7;
+}
+.c {
+  box-shadow: 3px 3px 4px#c75584, -3px -3px 4px #0e0d10;
+}
 .card {
   box-shadow: 3px 3px 4px #2f2b2e, -3px -3px 4px #252529;
   padding: 2px 10px;
@@ -124,4 +130,15 @@ a {
   font-size: 1.2rem;
   letter-spacing: 1.1px;
   color: #91bde0;
+}
+
+.box {
+  max-width: 320px;
+  height: 200px;
+  box-shadow: 3px 3px 4px #673ab7, -3px -3px 4px #673ab7;
+}
+.Project_head {
+  font-size: 1.5rem;
+  color: #673ab7;
+  font-weight: 700;
 }
