@@ -133,7 +133,8 @@ a {
 }
 
 .box {
-  max-width: 320px;
+  width: 320px;
+  max-width: 82vw;
   height: 200px;
   box-shadow: 3px 3px 4px #673ab7, -3px -3px 4px #673ab7;
 }
