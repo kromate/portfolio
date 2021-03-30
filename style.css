@@ -120,6 +120,10 @@ a {
     opacity: 1;
   }
 }
+.i_text {
+  font-size: 0.8rem;
+  color: #673ab7;
+}
 
 .text_start {
   text-align: start !important;
