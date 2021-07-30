@@ -147,3 +147,59 @@ a {
   color: #dfdae8;
   font-weight: 700;
 }
+
+
+svg {
+  display: block;
+  font-size: 6em;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 7% 22%;
+  stroke-width: 2.9px;
+  stroke-dashoffset: 9%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+stroke: #b58cfe;
+animation-delay: -1s;
+}
+
+.text-copy:nth-child(2){
+stroke: #3add40;
+animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+stroke: #b43e3e;
+animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+stroke: #d67761;
+animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+stroke: #3e23ac;
+animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+100% {stroke-dashoffset: -35%;}
+}
+a {
+-webkit-transition: all 0.7s ease-in-out;
+-moz-transition: all 0.7s ease-in-out;
+-o-transition: all 0.7s ease-in-out;
+-ms-transition: all 0.7s ease-in-out;
+transition: all 0.7s ease-in-out;
+}
+
+
+
