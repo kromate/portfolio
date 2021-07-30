@@ -157,8 +157,8 @@ svg {
 }
 
 .text-copy {
-  fill: none;
-  stroke: white;
+  fill: rgba(255, 255, 255, 0.073);
+  stroke: rgba(255, 255, 255, 0.247);
   stroke-dasharray: 7% 22%;
   stroke-width: 2.9px;
   stroke-dashoffset: 9%;
