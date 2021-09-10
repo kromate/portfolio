@@ -193,6 +193,7 @@ animation-delay: -5s;
 @keyframes stroke-offset{
 100% {stroke-dashoffset: -35%;}
 }
+
 a {
 -webkit-transition: all 0.7s ease-in-out;
 -moz-transition: all 0.7s ease-in-out;
